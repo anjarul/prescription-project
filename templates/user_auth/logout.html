@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Logout</title>
+</head>
+
+<body>
+
+<h1>You are Logged out!</h1>
+    <hr>
+    <h3>Already have an account? Login again: <a href="{% url 'user_auth:login' %}">Login</a></h2>
+    <h2>OR,</h2>    
+    {% comment %} <h3>Signup: <a href="{% url 'user_auth:signup' %}">SignUp</a></h3> {% endcomment %}
+    <br>
+</body>
+</html>
+
+

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Home</title>
+</head>
+
+<body>
+
+<h1>Home Page</h1>
+<hr>
+{% comment %} <button type="submit"><a href="{% url 'user_auth:logout' %}">LOGOUT</a></button>
+<hr>
+  <h2>Welcome {{request.user}}</h2> {% endcomment %}
+
+
+    {% if request.user.is_authenticated %}
+      <div class="top-right" style="position: absolute;top:10px;right:15px;left:auto;">
+      <p>
+      <a href="{% url 'user_auth:logout' %}"><h4>logout</h4></a>
+      </p>
+      </div>
+      <br><br><br>
+      <center>
+      <h1 style="color: purple">Hi @<b>{{ user.username }}!</b></h1>
+      </center>
+      
+    {% else %}
+      <center><br><p><h1 style="color: purple">You are not logged in</h1></p><br><br>
+      <a href="{% url 'user_auth:login' %}"><b><h1 style="font_size: 10px">Login</h1></a>
+      </center>
+    {% endif %}
+    
+</body>
+</html>
+
+
